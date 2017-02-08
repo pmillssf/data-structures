@@ -1,5 +1,5 @@
 var Queue = function() {
-  var someInstance = {'len': 0};
+  var someInstance = {'len': 0, 'storage': {}};
   $.extend(someInstance, queueMethods);
   return someInstance;
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
@@ -10,13 +10,17 @@ var queueMethods = {
   'size': function() {
     return this.len;
   },
-  'enqueue': function() {
+  'enqueue': function(value) {
+    this.storage[this.len] = value;
     this.len++;
   },
   'dequeue': function() {
+    var dequeued = this.storage[this.len - 1];
+    delete this.storage[this.len];
     if (this.len > 0) {
       this.len--;
     }
+    return dequeued;
   }
 };
 
