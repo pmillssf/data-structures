@@ -1,7 +1,6 @@
 var Stack = function() {
-  var someInstance = {'length': 0};
+  var someInstance = {'len': 0, 'storage': {}};
   $.extend(someInstance, stackMethods);
-  console.log(someInstance);
   return someInstance;
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
@@ -9,15 +8,19 @@ var Stack = function() {
 
 var stackMethods = {
   'size': function() {
-    return this.length;
+    return this.len;
   },
-  'push': function() {
-    this.length++;
+  'push': function(value) {
+    this.storage[this.len] = value;
+    this.len++;
   },
   'pop': function() {
-    if (this.length > 0) {
-      this.length--;
+    var popped = this.storage[this.len - 1];
+    delete this.storage[this.len];
+    if (this.len > 0) {
+      this.len--;
     }
+    return popped;
   }
 };
 
