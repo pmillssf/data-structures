@@ -7,8 +7,11 @@ var Queue = function() {
 };
 
 var queueMethods = {
-  size: function() {
+  'size': function() {
     return this.len;
+  },
+  'enqueue': function() {
+    this.len++;
   }
 };
 
