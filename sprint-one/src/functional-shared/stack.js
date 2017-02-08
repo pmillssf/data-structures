@@ -15,7 +15,9 @@ var stackMethods = {
     this.length++;
   },
   'pop': function() {
-    this.length--;
+    if (this.length > 0) {
+      this.length--;
+    }
   }
 };
 
