@@ -14,7 +14,9 @@ var queueMethods = {
     this.len++;
   },
   'dequeue': function() {
-    this.len--;
+    if (this.len > 0) {
+      this.len--;
+    }
   }
 };
 
