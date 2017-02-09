@@ -10,8 +10,11 @@ var queueMethods = {
   'size': function() {
     return this.len;
   }, 
-  'enqueue' : function() {
+  'enqueue': function() {
     this.len++;
+  },
+  'dequeue': function() {
+
   }
 };
 
