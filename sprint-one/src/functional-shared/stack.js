@@ -1,6 +1,6 @@
 var Stack = function() {
   var someInstance = {'len': 0, 'storage': {}};
-  $.extend(someInstance, stackMethods);
+  _.extend(someInstance, stackMethods);
   return someInstance;
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
