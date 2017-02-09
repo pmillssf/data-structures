@@ -16,7 +16,10 @@ var queueMethods = {
     this.len++;
   },
   'dequeue': function() {
-    var dequeued = this.storage[this.len - 1];
+    var dequeued = this.storage[0];
+    for (var i = 0; i < this.len; i++){
+      this.storage[i] = this.storage[i + 1];
+    }
     delete this.storage[this.len];
     if (this.len > 0) {
       this.len--;
