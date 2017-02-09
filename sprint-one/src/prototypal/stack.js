@@ -12,6 +12,8 @@ var stackMethods = {
   },
   'push': function() {
     this.len++;
+  },
+  'pop': function() {
   }
 };
 
