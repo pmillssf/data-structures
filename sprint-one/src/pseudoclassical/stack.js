@@ -5,20 +5,20 @@ var Stack = function() {
   // but try not not reference your old code in writing the new style.
 };
 
-Stack.prototype = {
-  'size': function() {
-    return this.len;
-  },
-  'push': function(value) {
-    this.storage[this.len] = value;
-    this.len++;
-  },
-  'pop': function() {
-    var popped = this.storage[this.len - 1];
-    delete this.storage[this.len];
-    if (this.len > 0) {
-      this.len--;
-    }
-    return popped;
+Stack.prototype.size = function() {
+  return this.len;
+};
+
+Stack.prototype.push = function(value) {
+  this.storage[this.len] = value;
+  this.len++;
+};
+
+Stack.prototype.pop = function() {
+  var popped = this.storage[this.len - 1];
+  delete this.storage[this.len];
+  if (this.len > 0) {
+    this.len--;
   }
+  return popped;
 };
