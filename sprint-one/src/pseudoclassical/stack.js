@@ -12,5 +12,6 @@ Stack.prototype = {
     this.len++;
   },
   'pop': function() {
+    this.len--;
   }
 };
