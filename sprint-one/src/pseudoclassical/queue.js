@@ -13,7 +13,9 @@ Queue.prototype.enqueue = function() {
 };
 
 Queue.prototype.dequeue = function() {
-  this.len--;
+  if (this.len > 0) {
+    this.len--;
+  }
 };
 
 
