@@ -9,6 +9,9 @@ var Stack = function() {
 var stackMethods = {
   'size': function() {
     return this.len;
+  },
+  'push': function() {
+    this.len++;
   }
 };
 
