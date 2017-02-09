@@ -12,6 +12,8 @@ Queue.prototype.enqueue = function() {
   this.len++;
 };
 
-Queue.prototype.dequeue = function() {};
+Queue.prototype.dequeue = function() {
+  this.len--;
+};
 
 
