@@ -7,5 +7,8 @@ var Stack = function() {
 Stack.prototype = {
   'size': function() {
     return this.len;
+  },
+  'push': function() {
+    this.len++;
   }
 };
