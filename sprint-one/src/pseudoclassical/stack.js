@@ -10,5 +10,7 @@ Stack.prototype = {
   },
   'push': function() {
     this.len++;
+  },
+  'pop': function() {
   }
 };
