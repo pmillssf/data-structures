@@ -2,6 +2,7 @@
 
 // Instantiate a new graph
 var Graph = function() {
+  this.nodes = [];
 };
 
 // Add a node to the graph, passing in the node's value.
@@ -30,6 +31,14 @@ Graph.prototype.removeEdge = function(fromNode, toNode) {
 
 // Pass in a callback which will be executed on each node of the graph.
 Graph.prototype.forEachNode = function(cb) {
+};
+
+// Create a node class
+var Node = function(value) {
+  // each node has a value property set to its value
+  this.value = value;
+ // each node has an edges property that contains an array of edges;
+  this.edges = [];
 };
 
 /*
