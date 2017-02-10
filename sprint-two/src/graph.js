@@ -103,6 +103,11 @@ Graph.prototype.removeEdge = function(fromNode, toNode) {
 
 // Pass in a callback which will be executed on each node of the graph.
 Graph.prototype.forEachNode = function(cb) {
+  // iterate over this.nodes
+  for (var i = 0; i < this.nodes.length; i++) {
+    // call cb with this.nodes[index].value
+    cb(this.nodes[i].value);
+  }
 };
 
 // Create a node class
