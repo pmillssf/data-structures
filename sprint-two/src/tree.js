@@ -33,6 +33,9 @@ treeMethods.returnTree = function() {
   // push this.value into the array
   results.push(this.value);
   // return the results
+  // loop over this.children
+    // call returnTree on this.children[index]
+    // push result into results
   return results;
 };
 
