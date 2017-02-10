@@ -32,10 +32,13 @@ treeMethods.returnTree = function() {
   var results = [];
   // push this.value into the array
   results.push(this.value);
-  // return the results
   // loop over this.children
+  for (var i = 0; i < this.children.length; i++) {
     // call returnTree on this.children[index]
     // push result into results
+    results.push(this.children[i].returnTree());
+  }
+  // return the results
   return results;
 };
 
