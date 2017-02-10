@@ -1,10 +1,10 @@
 var Tree = function(value) {
   var newTree = {};
-  _.extend(newTree, treeMethods);
-  newTree.value = value;
 
-  // your code here
-  newTree.children = [];  // fix me
+  _.extend(newTree, treeMethods);
+
+  newTree.value = value;
+  newTree.children = [];
 
   return newTree;
 };
@@ -28,17 +28,13 @@ treeMethods.contains = function(target) {
 };
 
 treeMethods.returnTree = function() {
-  // define results array
   var results = [];
-  // push this.value into the array
+
   results.push(this.value);
-  // loop over this.children
+  
   for (var i = 0; i < this.children.length; i++) {
-    // call returnTree on this.children[index]
-    // push result into results
     results.push(this.children[i].returnTree());
   }
-  // return the results
   return results;
 };
 
