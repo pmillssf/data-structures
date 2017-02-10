@@ -27,6 +27,12 @@ treeMethods.contains = function(target) {
   return results;
 };
 
+treeMethods.returnTree = function() {
+  // define results array
+  // push this.value into the array
+  // return the results
+};
+
 
 
 /*
