@@ -46,7 +46,7 @@ describe('tree', function() {
     tree.children[0].addChild(2);
     tree.children[1].addChild(3);
     tree.children[1].addChild(4);
-    var expected = [undefined, [5, [2]], [7, [3, 4]]];
+    var expected = [undefined, [5, [2]], [7, [3], [4]]];
     expect(tree.returnTree()).to.eql(expected);
   });
 
