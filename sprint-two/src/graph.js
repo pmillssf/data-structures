@@ -28,9 +28,18 @@ Graph.prototype.removeNode = function(node) {
   var nodeValues = _.map(this.nodes, function(node) {
     return node.value;
   });
+  // for each node in this.nodes
+  for (var i = 0; i < nodeValues.length; i++) {
+    if (nodeValues[i] !== node) {
+      // removeEdge on node[index] and node;
+      this.removeEdge(nodeValues[i], node); 
+    }
+  }
+  
   // use _indexOf to find the index of the node value
   var indexToDelete = _.indexOf(nodeValues, node);
   // use this.nodes.splice() to remove the returned indexOf
+
   this.nodes.splice(indexToDelete, 1);
 
 };
@@ -46,6 +55,9 @@ Graph.prototype.hasEdge = function(fromNode, toNode) {
   // use _.indexOf to find the index of toNode (toNodeIndex)
   var toNodeIndex = _.indexOf(nodeValues, toNode);
   // use _.contains to check if FromNodeIndex.edges contains toNode, set to variable fromNodeHasEdge
+  if (fromNodeIndex < 0 || toNodeIndex < 0) {
+    return false;
+  }
   var fromNodeHasEdge = _.contains(this.nodes[fromNodeIndex].edges, toNode);
   // use _.contains to check if toNodeIndex.edges contains fromNode, set to variable toNodeHasEdge
   var toNodeHasEdge = _.contains(this.nodes[toNodeIndex].edges, fromNode);
