@@ -38,11 +38,19 @@ Graph.prototype.removeNode = function(node) {
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
 Graph.prototype.hasEdge = function(fromNode, toNode) {
   // use _.map to get an array of node values
+  var nodeValues = _.map(this.nodes, function(node) {
+    return node.value;
+  });
   // use _.indexOf to find the index of fromNode (fromNodeIndex)
+  var fromNodeIndex = _.indexOf(nodeValues, fromNode);
   // use _.indexOf to find the index of toNode (toNodeIndex)
+  var toNodeIndex = _.indexOf(nodeValues, toNode);
   // use _.contains to check if FromNodeIndex.edges contains toNode, set to variable fromNodeHasEdge
+  var fromNodeHasEdge = _.contains(this.nodes[fromNodeIndex].edges, toNode);
   // use _.contains to check if toNodeIndex.edges contains fromNode, set to variable toNodeHasEdge
-  // return fromNodeHasEdge && ToNodeHasEdge
+  var toNodeHasEdge = _.contains(this.nodes[toNodeIndex].edges, fromNode);
+  // return fromNodeHasEdge && toNodeHasEdge
+  return fromNodeHasEdge && toNodeHasEdge;
 };
 
 // Connects two nodes in a graph by adding an edge between them.
