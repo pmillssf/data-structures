@@ -68,4 +68,13 @@ describe('graph', function() {
     expect(graph.hasEdge(3, 5)).to.equal(true);
     expect(graph.hasEdge(5, 5)).to.equal(true);
   });
+
+  it('should return an array of nodes', function() {
+    graph.addNode(7);
+    graph.addNode(3);
+    graph.addNode(4);
+    graph.addNode(6);
+    var expected = [7, 3, 4, 6];
+    expect(_.sortBy(graph.returnNodes)).to.eql(_.sortBy(expected));
+  });
 });
