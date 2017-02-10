@@ -13,6 +13,13 @@ Graph.prototype.addNode = function(node) {
 
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
 Graph.prototype.contains = function(node) {
+  // use _.map to iterate through the this.nodes property, returning an array of the nodes values
+  var nodeValues = _.map(this.nodes, function(node) {
+    return node.value;
+  });
+  // use _.containts on the above map to check if the node exists
+  return _.contains(nodeValues, node);
+
 };
 
 // Removes a node from the graph.
