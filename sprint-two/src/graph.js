@@ -14,9 +14,7 @@ Graph.prototype.addNode = function(node) {
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
 Graph.prototype.contains = function(node) {
   // use _.map to iterate through the this.nodes property, returning an array of the nodes values
-  var nodeValues = _.map(this.nodes, function(node) {
-    return node.value;
-  });
+  var nodeValues = this.returnNodes();
   // use _.containts on the above map to check if the node exists
   return _.contains(nodeValues, node);
 
@@ -25,9 +23,7 @@ Graph.prototype.contains = function(node) {
 // Removes a node from the graph.
 Graph.prototype.removeNode = function(node) {
   // use _.map to return an array of values
-  var nodeValues = _.map(this.nodes, function(node) {
-    return node.value;
-  });
+  var nodeValues = this.returnNodes();
   // for each node in this.nodes
   for (var i = 0; i < nodeValues.length; i++) {
     if (nodeValues[i] !== node) {
@@ -47,9 +43,7 @@ Graph.prototype.removeNode = function(node) {
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
 Graph.prototype.hasEdge = function(fromNode, toNode) {
   // use _.map to get an array of node values
-  var nodeValues = _.map(this.nodes, function(node) {
-    return node.value;
-  });
+  var nodeValues = this.returnNodes();
   // use _.indexOf to find the index of fromNode (fromNodeIndex)
   var fromNodeIndex = _.indexOf(nodeValues, fromNode);
   // use _.indexOf to find the index of toNode (toNodeIndex)
@@ -68,9 +62,7 @@ Graph.prototype.hasEdge = function(fromNode, toNode) {
 // Connects two nodes in a graph by adding an edge between them.
 Graph.prototype.addEdge = function(fromNode, toNode) {
   // use _.map to find the node values
-  var nodeValues = _.map(this.nodes, function(node) {
-    return node.value;
-  });
+  var nodeValues = this.returnNodes();
   // use _.indexOf to find the index of fromNode (fromNodeIndex)
   var fromNodeIndex = _.indexOf(nodeValues, fromNode);
   // use _.indexOf to find the index of toNode (toNodeIndex)
@@ -84,9 +76,7 @@ Graph.prototype.addEdge = function(fromNode, toNode) {
 // Remove an edge between any two specified (by value) nodes.
 Graph.prototype.removeEdge = function(fromNode, toNode) {
   // use _.map to find the node values
-  var nodeValues = _.map(this.nodes, function(node) {
-    return node.value;
-  });
+  var nodeValues = this.returnNodes();
   // use _.indexOf to find the index of fromNode (fromNodeIndex)
   var fromNodeIndex = _.indexOf(nodeValues, fromNode);
   // use _.indexOf to find the index of toNode (toNodeIndex)
