@@ -75,6 +75,6 @@ describe('graph', function() {
     graph.addNode(4);
     graph.addNode(6);
     var expected = [7, 3, 4, 6];
-    expect(_.sortBy(graph.returnNodes)).to.eql(_.sortBy(expected));
+    expect(_.sortBy(graph.returnNodes())).to.eql(_.sortBy(expected));
   });
 });
