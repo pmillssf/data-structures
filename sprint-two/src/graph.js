@@ -110,6 +110,13 @@ Graph.prototype.forEachNode = function(cb) {
   }
 };
 
+Graph.prototype.returnNodes = function() {
+  var nodeValues = _.map(this.nodes, function(node) {
+    return node.value;
+  });
+  return nodeValues;
+};
+
 // Create a node class
 var GraphNode = function(value) {
   // each node has a value property set to its value
