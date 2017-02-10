@@ -40,7 +40,7 @@ describe('tree', function() {
     expect(tree.contains(7)).to.equal(true);
     expect(tree.contains(8)).to.equal(true);
   });
-  it('should return an array of the tree values', function() {
+  it('should return an array of the tree branches and values', function() {
     tree.addChild(5);
     tree.addChild(7);
     tree.children[0].addChild(2);
