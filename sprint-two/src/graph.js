@@ -7,6 +7,8 @@ var Graph = function() {
 
 // Add a node to the graph, passing in the node's value.
 Graph.prototype.addNode = function(node) {
+  var newNode = new GraphNode(node);
+  this.nodes.push(newNode);
 };
 
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
@@ -34,7 +36,7 @@ Graph.prototype.forEachNode = function(cb) {
 };
 
 // Create a node class
-var Node = function(value) {
+var GraphNode = function(value) {
   // each node has a value property set to its value
   this.value = value;
  // each node has an edges property that contains an array of edges;
