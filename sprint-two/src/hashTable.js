@@ -16,6 +16,12 @@ HashTable.prototype.insert = function(k, v) {
   }
   // push pair into this.storage[index];
   this._storage[index].push(pair);
+  // if retrieve(k) is undefined
+    // push the pair
+  // else if retrieve k is defined
+    // iterate through this._storage[index]
+      // if match to key
+        // set value to equal v;
 };
 
 HashTable.prototype.retrieve = function(k) {
