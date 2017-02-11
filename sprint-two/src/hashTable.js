@@ -109,3 +109,20 @@ HashTable.prototype.double = function() {
   }
   this.tupleCount = tuplesCountHolder;
 };
+// update .remove:
+  // check if tupleCount > 0
+    // if yes touplecount-- 
+  // check if tupleCount < Math.ceil((this.limit * .25))
+    // if yes this.halve
+// define .halve
+  // calls HashTable.prototype.tuples and saves the result as var tuples
+  // sets var tuplesCountHolder to tupleCount
+  // if (this._limit * .5 >= 1)
+    //  sets this._limit to this._limit * .5;
+  // if (this._limt * .5 < 1)
+    // set this.limt to 1
+  // set this._storage to LimitedArray(this._limit)
+    // iterates over tuples
+        // call this.insert on each tuple 
+
+
