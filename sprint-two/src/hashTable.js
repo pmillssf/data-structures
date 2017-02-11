@@ -27,13 +27,17 @@ HashTable.prototype.insert = function(k, v) {
 HashTable.prototype.retrieve = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
   // iterate over this._storage[index]
+  if (this._storage[index] === undefined) {
+    return undefined;
+  }
   for (var i = 0; i < this._storage[index].length; i++) {
     // find the array with index 0 that matches k
     if (this._storage[index][i][0] === k) {
     // return the value at index 1 for the matching array
       return this._storage[index][i][1];
-    }   
+    }
   }
+  return undefined;
 };
 
 HashTable.prototype.remove = function(k) {
