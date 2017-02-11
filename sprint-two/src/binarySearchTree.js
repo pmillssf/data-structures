@@ -58,6 +58,14 @@ BinarySearchTree.prototype.contains = function(value) {
   } else {
     return false;
   }
+  // if (this.value === value)
+    // return true
+  // else if (this.value > value && this.left !== undefined)
+    // return this.left.contains(value);
+  // else if (this.value < value && this.right !== undefined)
+    // return this.right.contains(value)
+  // else 
+    // return false
 };
 // define BinarySearchTree.prototype.depthFirstLog function
 BinarySearchTree.prototype.depthFirstLog = function(cb) {
