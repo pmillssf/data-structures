@@ -53,19 +53,23 @@ BinarySearchTree.prototype.insert = function(treeOrValue) {
 };
 // define BinarySearchTree.prototype.contains function
 BinarySearchTree.prototype.contains = function(value) {
+  // if (this.value === value)
   if (this.value === value) {
+    // return true
     return true;
+  // else if (this.value > value && this.left !== undefined)
+  } else if (this.value > value && this.left !== undefined) {
+    // return this.left.contains(value);
+    return this.left.contains(value);   
+  // else if (this.value < value && this.right !== undefined)
+  }  else if (this.value < value && this.right !== undefined) {
+    // return this.right.contains(value)
+    return this.right.contains(value);
+  // else 
   } else {
+    // return false
     return false;
   }
-  // if (this.value === value)
-    // return true
-  // else if (this.value > value && this.left !== undefined)
-    // return this.left.contains(value);
-  // else if (this.value < value && this.right !== undefined)
-    // return this.right.contains(value)
-  // else 
-    // return false
 };
 // define BinarySearchTree.prototype.depthFirstLog function
 BinarySearchTree.prototype.depthFirstLog = function(cb) {
