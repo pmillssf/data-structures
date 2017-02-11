@@ -42,6 +42,17 @@ var LinkedList = function() {
     }
   };
 
+  list.returnList = function() {
+    // define results equal to an array conraining the string 'HEAD'
+    // define node as equal to list.head
+    // while node !== null
+      // push(node.value into results);
+      // set node equal to node.next
+    // push 'TAIL' to results
+    // return results
+
+  };
+
   return list;
 };
 
