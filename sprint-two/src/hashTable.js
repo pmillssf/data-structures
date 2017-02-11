@@ -7,6 +7,8 @@ var HashTable = function() {
 
 HashTable.prototype.insert = function(k, v) {
   var index = getIndexBelowMaxForKey(k, this._limit);
+  // set pair equal to an array of [k, v]
+   // set index to pair on storage
 };
 
 HashTable.prototype.retrieve = function(k) {
