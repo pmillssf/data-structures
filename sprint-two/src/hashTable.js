@@ -146,4 +146,11 @@ HashTable.prototype.halve = function() {
   this.tupleCount = tuplesCountHolder;
 };
 
-
+/* Time complexities 
+insert = O(n);
+retrieve = O(n);
+remove = O(n);
+tuples = O(n);
+double = O(n);
+halve = O(n);
+*/
