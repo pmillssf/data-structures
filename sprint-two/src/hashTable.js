@@ -20,6 +20,9 @@ HashTable.prototype.insert = function(k, v) {
 
 HashTable.prototype.retrieve = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
+  // iterate over this._storage[index]
+    // find the array with index 0 that matches k
+    // return the value at index 1 for the matching array
 };
 
 HashTable.prototype.remove = function(k) {
