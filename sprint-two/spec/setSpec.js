@@ -24,4 +24,14 @@ describe('set', function() {
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
 
+  it('should return a random value', function() {
+    set.add('Susan Sarandon');
+    set.add('Danny Glover');
+    set.add('Mel Gibson');
+    set.add('Mel Gibson the 1st');
+    set.add('Mel Gibson the 2nd');
+    // this will fail 1/5 times
+    expect(set.random()).to.not.equal('Susan Sarandon');
+  });
+
 });
