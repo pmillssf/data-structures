@@ -62,7 +62,7 @@ BinarySearchTree.prototype.contains = function(value) {
     // return this.left.contains(value);
     return this.left.contains(value);   
   // else if (this.value < value && this.right !== undefined)
-  }  else if (this.value < value && this.right !== undefined) {
+  } else if (this.value < value && this.right !== undefined) {
     // return this.right.contains(value)
     return this.right.contains(value);
   // else 
@@ -73,7 +73,7 @@ BinarySearchTree.prototype.contains = function(value) {
 };
 // define BinarySearchTree.prototype.depthFirstLog function
 BinarySearchTree.prototype.depthFirstLog = function(cb) {
-
+  cb(this.value);
 };
 
 /*
