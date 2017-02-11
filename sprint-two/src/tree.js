@@ -42,4 +42,7 @@ treeMethods.returnTree = function() {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ addChild - O(1);
+ contains - 0(n);
+ returnTree - o(n);
  */
