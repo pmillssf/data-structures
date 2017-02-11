@@ -12,15 +12,15 @@ var BinarySearchTree = function(value) {
 };
 
 // define BinarySearchTree.prototype.insert function
-BinarySearchTree.prototype.insert = function() {
+BinarySearchTree.prototype.insert = function(value) {
 
 };
 // define BinarySearchTree.prototype.contains function
-BinarySearchTree.prototype.contains = function() {
+BinarySearchTree.prototype.contains = function(value) {
 
 };
 // define BinarySearchTree.prototype.depthFirstLog function
-BinarySearchTree.prototype.depthFirstLog = function() {
+BinarySearchTree.prototype.depthFirstLog = function(cb) {
 
 };
 
