@@ -39,6 +39,11 @@ HashTable.prototype.insert = function(k, v) {
   }
   // set index to rerieved
   this._storage.set(index, retrieved);
+  //if tupleCount > Math.floor(this._limit * .75)
+  if (this.tupleCount > Math.floor(this._limit * .75)) {
+    // this.double();
+    this.double();
+  }
 };
 
 HashTable.prototype.retrieve = function(k) {
@@ -92,6 +97,7 @@ HashTable.prototype.tuples = function() {
 HashTable.prototype.double = function() {
   // calls HashTable.prototype.tuples and saves the result as var tuples
   var tuples = this.tuples();
+  var tuplesCountHolder = this.tupleCount;
   // sets this._limit to this._limit * 2;
   this._limit = this._limit * 2;
   // set this._storage to LimitedArray(this._limit)
@@ -101,11 +107,5 @@ HashTable.prototype.double = function() {
     // calls this.insert on each tuple 
     this.insert(tuples[i][0], tuples[i][1]);
   }
+  this.tupleCount = tuplesCountHolder;
 };
-// Double in size:
-  
-
-//Once tuples and double are defined updated insert with:
-  //if tupleCount > Math.floor(this._limit * .75)
-  // this.double();
-
