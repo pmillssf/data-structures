@@ -53,7 +53,11 @@ BinarySearchTree.prototype.insert = function(treeOrValue) {
 };
 // define BinarySearchTree.prototype.contains function
 BinarySearchTree.prototype.contains = function(value) {
-
+  if (this.value === value) {
+    return true;
+  } else {
+    return false;
+  }
 };
 // define BinarySearchTree.prototype.depthFirstLog function
 BinarySearchTree.prototype.depthFirstLog = function(cb) {
