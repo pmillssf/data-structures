@@ -69,3 +69,17 @@ HashTable.prototype.remove = function(k) {
   }
 };
 
+/* Double in size:
+  Add tuple count to HashTable, set to 0
+  Update .insert to increment tuple count when a pair is pushed
+  define HashTable.prototype.tuples - 
+    will use this._storage.each() to produce an array of all the tuples
+  
+  define HashTable.prototype.double
+    calls HashTable.prototype.tuples and saves the result as var tuples
+    sets this._limit to this._limit * 2;
+    set this._storage to LimitedArray(this._limit)
+    iterates over tuples
+      calls this.insert on each tuple
+*/
+
