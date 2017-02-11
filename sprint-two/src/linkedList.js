@@ -8,14 +8,9 @@ var LinkedList = function() {
       var initialNode = Node(value);
       list.head = initialNode;
       list.tail = initialNode;
-    } else if (list.head === list.tail) {
-      var newNode = Node(value);
-      list.tail = newNode;
-      list.head.next = list.tail;
     } else {
       var newNode = Node(value);
-      list.head.next = list.tail.next;
-      list.tail.next = list.tail;
+      list.tail.next = newNode;
       list.tail = newNode;
     }
   };
@@ -44,12 +39,20 @@ var LinkedList = function() {
 
   list.returnList = function() {
     // define results equal to an array conraining the string 'HEAD'
+    var results = ['HEAD'];
     // define node as equal to list.head
+    var node = list.head;
     // while node !== null
+    while (node !== null) {
       // push(node.value into results);
+      results.push(node.value);
       // set node equal to node.next
+      node = node.next;      
+    }
     // push 'TAIL' to results
+    results.push('TAIL');
     // return results
+    return results;
 
   };
 
