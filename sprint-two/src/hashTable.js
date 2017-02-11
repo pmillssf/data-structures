@@ -17,18 +17,26 @@ HashTable.prototype.retrieve = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
   // set retrieved equal to .get(index);
   var retrieved = this._storage.get(index);
-  // if retrieved[0] === k
-  if (retrieved[0] === k) { 
-    // return retrieved[1];
-    return retrieved[1]; 
+  if (retrieved !== undefined) {
+    // if retrieved[0] === k
+    if (retrieved[0] === k) { 
+      // return retrieved[1];
+      return retrieved[1]; 
+    }
   }
 };
 
 HashTable.prototype.remove = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
   // set retrieved equal to .get(index);
+  var retrieved = this._storage.get(index);
+  if (retrieved !== undefined) {
     // if retrieved[0] === k
+    if (retrieved[0] === k) {
       //.set(index);
+      this._storage.set(index);      
+    }
+  }
 };
 
 
