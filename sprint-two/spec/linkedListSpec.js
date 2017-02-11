@@ -55,7 +55,7 @@ describe('linkedList', function() {
     linkedList.addToTail(4);
     linkedList.addToTail(5);
     linkedList.addToTail(6);
-    expect(linkedList.returnList()).to.eql([HEAD, 4, 5, 6, TAIL]);
+    expect(linkedList.returnList()).to.eql(['HEAD', 4, 5, 6, 'TAIL']);
   });
 
   // add more tests here to test the functionality of linkedList
