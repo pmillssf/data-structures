@@ -3,6 +3,8 @@
 var HashTable = function() {
   this._limit = 8;
   this._storage = LimitedArray(this._limit);
+  //Add tuple count to HashTable, set to 0
+  this.tupleCount = 0;
 };
 
 HashTable.prototype.insert = function(k, v) {
@@ -32,6 +34,8 @@ HashTable.prototype.insert = function(k, v) {
   if (!keyExists) {
     //push pair into retreved;
     retrieved.push(pair);
+    //Update .insert to increment tuple count when a pair is pushed
+    this.tupleCount++;
   }
   // set index to rerieved
   this._storage.set(index, retrieved);
@@ -69,17 +73,39 @@ HashTable.prototype.remove = function(k) {
   }
 };
 
-/* Double in size:
-  Add tuple count to HashTable, set to 0
-  Update .insert to increment tuple count when a pair is pushed
-  define HashTable.prototype.tuples - 
-    will use this._storage.each() to produce an array of all the tuples
+// define HashTable.prototype.tuples - 
+HashTable.prototype.tuples = function() {
+  var tuples = [];
+  // Use this._storage.each() to push each tuple into tuples
+  this._storage.each(function(storage) {
+    if (storage !== undefined) {
+      for (var i = 0; i < storage.length; i++) {
+        tuples.push(storage[i]);
+      }
+    }
+  });
+  // return tuples
+  return tuples;
+};
+
+//   define HashTable.prototype.double
+HashTable.prototype.double = function() {
+  // calls HashTable.prototype.tuples and saves the result as var tuples
+  var tuples = this.tuples();
+  // sets this._limit to this._limit * 2;
+  this._limit = this._limit * 2;
+  // set this._storage to LimitedArray(this._limit)
+  this._storage = LimitedArray(this._limit);
+  // iterates over tuples
+  for (var i = 0; i < tuples.length; i++) {
+    // calls this.insert on each tuple 
+    this.insert(tuples[i][0], tuples[i][1]);
+  }
+};
+// Double in size:
   
-  define HashTable.prototype.double
-    calls HashTable.prototype.tuples and saves the result as var tuples
-    sets this._limit to this._limit * 2;
-    set this._storage to LimitedArray(this._limit)
-    iterates over tuples
-      calls this.insert on each tuple
-*/
+
+//Once tuples and double are defined updated insert with:
+  //if tupleCount > Math.floor(this._limit * .75)
+  // this.double();
 
