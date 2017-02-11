@@ -13,6 +13,11 @@ var BinarySearchTree = function(value) {
 
 // define BinarySearchTree.prototype.insert function
 BinarySearchTree.prototype.insert = function(value) {
+  // set var newBinarySearchTree = BinarySearchTree(value);
+  // if this.value > newBinarySearchTree.value
+    // set this.left to newBinarySearchTree
+  // else if this.value < newBinarySearchTree
+    // set this.right to newBinarySearchTree
 
 };
 // define BinarySearchTree.prototype.contains function
