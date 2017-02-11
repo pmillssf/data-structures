@@ -38,4 +38,8 @@ setPrototype.random = function() {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ add = O(n);
+ contains = O(n);
+ remove = O(n);
+ random = O(1);
  */
