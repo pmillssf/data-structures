@@ -56,10 +56,15 @@ HashTable.prototype.remove = function(k) {
   // set retrieved equal to .get(index);
   var retrieved = this._storage.get(index);
   if (retrieved !== undefined) {
-    // if retrieved[0] === k
-    if (retrieved[0] === k) {
-      //.set(index);
-      this._storage.set(index);      
+    // iterate over retrieved
+    for (var i = 0; i < retrieved.length; i++) {
+      // if retrieved[i][0] === k
+      if (retrieved[i][0] === k) {
+        // retrieved.splice(i, 1)
+        retrieved.splice(i, 1);
+        // set(index) to retieved
+        this._storage.set(index, retrieved);
+      } 
     }
   }
 };
