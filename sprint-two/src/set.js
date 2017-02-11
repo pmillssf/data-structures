@@ -29,6 +29,13 @@ setPrototype.remove = function(item) {
   }
 };
 
+setPrototype.random = function() {
+  // set randomNum = Math.floor(Math.random() * storage.length)
+  var randomNum = Math.floor(Math.random() * this._storage.length);
+  // return this._storage[randomNUm]
+  return this._storage[randomNum];
+};
+
 /*
  * Complexity: What is the time complexity of the above functions?
  */
