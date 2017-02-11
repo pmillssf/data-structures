@@ -14,14 +14,20 @@ HashTable.prototype.insert = function(k, v) {
     // if yes, set to an empty array
     this._storage[index] = [];
   }
-  // push pair into this.storage[index];
-  this._storage[index].push(pair);
   // if retrieve(k) is undefined
-    // push the pair
-  // else if retrieve k is defined
+  if (this.retrieve(k) === undefined) {
+    // push pair into this.storage[index];
+    this._storage[index].push(pair);
+  } else {
     // iterate through this._storage[index]
+    for (var i = 0; i < this._storage[index].length; i++) {
       // if match to key
+      if (this._storage[index][i][0] === k) {
         // set value to equal v;
+        this._storage[index][i][1] = v;
+      }
+    }
+  }
 };
 
 HashTable.prototype.retrieve = function(k) {
