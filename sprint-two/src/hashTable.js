@@ -11,6 +11,18 @@ HashTable.prototype.insert = function(k, v) {
   var pair = [k, v];
    // set index to pair on storage
   this._storage.set(index, pair);
+// Update to handle collisions:
+// check if index is undefined
+//     if so set(index) = [];
+// set var retrieved = .retrieve(index)
+// set var keyexists = false
+// iterate through retrieved
+//   if retrieved[i][0] equals k
+//     set retieved[i][1] to v 
+//     set keyexists = true
+// if !keyexisits 
+//   push pair into retreved;
+// set index to rerieved
 };
 
 HashTable.prototype.retrieve = function(k) {
@@ -38,5 +50,4 @@ HashTable.prototype.remove = function(k) {
     }
   }
 };
-
 
